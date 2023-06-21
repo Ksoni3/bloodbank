@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 
 //file imports
-import testRoutes from "./routes/testRoutes.js";
+
 import authRoutes from "./routes/authRoutes.js"
 import inventoryRoutes from "./routes/inventoryRoutes.js"
 
@@ -26,7 +26,7 @@ app.use(cors());
 const PORT = 8000;
 
 //routes
-app.use("/api/v1/test", testRoutes);
+
 app.use("/api/v1/auth", authRoutes)
 app.use("/api/v1/inventory", inventoryRoutes)
 
