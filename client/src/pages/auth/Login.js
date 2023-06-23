@@ -1,16 +1,7 @@
-import {
-  Card,
-  Box,
-  Typography,
-  Grid,
-  AppBar,
-  Link,
-  Button,
-  Container,
-  TextField,
-} from "@mui/material";
+import { Box, Grid, Container } from "@mui/material";
 import wallpaper from "../../assets/wallpaper.jpg";
 import { useStyles } from "../../styles/loginStyles";
+import Form from "../../components/shared/Form/Form";
 
 const Login = () => {
   const classes = useStyles();
@@ -18,36 +9,26 @@ const Login = () => {
   return (
     <>
       <Box>
-        <Grid container alignItems="center" justifyContent="center">
-          <Grid item lg={6} sm={12}>
+        <Grid container>
+          <Grid item lg={7.5} sm={12}>
             <Box>
-              <img src={wallpaper} alt="#wallpaper" className={classes.image} />
+              <img
+                src={wallpaper}
+                alt="#wallpaper"
+                className={classes.loginImage}
+              />
             </Box>
           </Grid>
-          <Grid item lg={6} sm={12}>
-            <Box
-              className={classes.applyFlex}
-              height="60vh"
-              alignItems="center"
-              flexDirection="column"
-            >
-              <Typography variant="h3"> Sign In</Typography>
-              <Box flexDirection="column" className={classes.applyFlex}>
-                <TextField label="Username" variant="outlined" />
-                <TextField
-                  label="Password"
-                  variant="outlined"
-                  type="password"
+          <Grid item lg={4.5} sm={12} className={classes.applyFlexCol}>
+            <Container sx={{ width: "80%", height: "50v" }}>
+              <Box>
+                <Form
+                  submitBtn={"Submit"}
+                  formTitle={"Login Page"}
+                  formType={"login"}
                 />
-                <Button
-                  variant="contained"
-                  className={classes.buttonBackground}
-                >
-                  {" "}
-                  Submit{" "}
-                </Button>
               </Box>
-            </Box>
+            </Container>
           </Grid>
         </Grid>
       </Box>
