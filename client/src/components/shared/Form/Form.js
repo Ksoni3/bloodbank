@@ -10,8 +10,10 @@ import React, { useState } from "react";
 import InputType from "./InputType";
 import { useStyles } from "../../../styles/loginStyles";
 import { handleLogin, handleRegister } from "../../../services/authService";
+import { useSelector } from "react-redux";
 
 const Form = ({ submitBtn, formTitle, formType }) => {
+  const { error } = useSelector((state) => state.auth);
   const [formData, setFormData] = useState({
     role: "donor",
     email: "",
@@ -183,6 +185,7 @@ const Form = ({ submitBtn, formTitle, formType }) => {
             return null;
         }
       })()}
+      {error && <Typography color="red"> {error}</Typography>}
 
       <Button
         type="submit"

@@ -8,6 +8,7 @@ export const handleLogin = (e, email, password, role) => {
       return alert("All fields required");
     }
     store.dispatch(userLogin({ email, password, role }));
+
     console.log("login", email, password, role);
   } catch (err) {
     console.log(err);
