@@ -4,15 +4,40 @@ import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import Homepage from "./pages/auth/Homepage";
 import { ToastContainer } from "react-toastify";
+import ProtectRoute from "./components/Routes/ProtectRoute";
+import PublicRoute from "./components/Routes/PublicRoute";
 
 const App = () => {
   return (
     <>
       <ToastContainer />
       <Routes>
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
-        <Route path="/" element={<Homepage />}></Route>
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        ></Route>
+        <Route
+          path="/register"
+          element={
+            <PublicRoute>
+              <Register />
+            </PublicRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/"
+          element={
+            <ProtectRoute>
+              {" "}
+              <Homepage />
+            </ProtectRoute>
+          }
+        ></Route>
       </Routes>
     </>
   );
