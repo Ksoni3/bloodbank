@@ -1,0 +1,8 @@
+.animated-image {
+    transition: filter 0.5s ease; /* Define the transition effect */
+  }
+  
+  .animated-image:hover {
+    filter: brightness(1.2); /* Modify the filter property to adjust brightness on hover */
+  }
+  

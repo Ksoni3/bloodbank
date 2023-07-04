@@ -1,5 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.clip{
+  clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+label, option{
+  color: "rose";
 }

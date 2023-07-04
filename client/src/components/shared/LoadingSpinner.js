@@ -1,22 +1,9 @@
 import React from "react";
-import CircularProgress from "@mui/material/CircularProgress";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  spinnerContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100vh",
-  },
-}));
 
 const LoadingSpinner = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.spinnerContainer}>
-      <CircularProgress />
+    <div className="flex justify-center items-center h-screen">
+      <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-gray-900"></div>
     </div>
   );
 };

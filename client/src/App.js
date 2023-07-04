@@ -6,6 +6,7 @@ import Homepage from "./pages/auth/Homepage";
 import { ToastContainer } from "react-toastify";
 import ProtectRoute from "./components/Routes/ProtectRoute";
 import PublicRoute from "./components/Routes/PublicRoute";
+import LandingPage from "./pages/LandingPage";
 
 const App = () => {
   return (
@@ -29,15 +30,19 @@ const App = () => {
           }
         ></Route>
 
-        <Route
-          path="/"
+        {/* <Route
+          path="/homepage"
           element={
             <ProtectRoute>
               {" "}
-              <Homepage />
+              <LandingPage />
             </ProtectRoute>
           }
-        ></Route>
+        ></Route> */}
+
+        <Route path="/homepage" element={<Homepage />} />
+
+        <Route path="/" element={<LandingPage />} />
       </Routes>
     </>
   );
