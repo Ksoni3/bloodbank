@@ -25,7 +25,7 @@ export const handleRegister = (
   phone
 ) => {
   e.preventDefault();
-  console.lo;
+
   try {
     store.dispatch(
       userRegister({
