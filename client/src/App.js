@@ -7,6 +7,9 @@ import { ToastContainer } from "react-toastify";
 import ProtectRoute from "./components/Routes/ProtectRoute";
 import PublicRoute from "./components/Routes/PublicRoute";
 import LandingPage from "./pages/LandingPage";
+import Donor from "./pages/auth/Donor";
+import Hospital from "./pages/auth/Hopital";
+import Organisation from "./pages/auth/Organisation";
 
 const App = () => {
   return (
@@ -43,6 +46,9 @@ const App = () => {
         <Route path="/homepage" element={<Homepage />} />
 
         <Route path="/" element={<LandingPage />} />
+        <Route path="/donor" element={<Donor />} />
+        <Route path="/hospital" element={<Hospital />} />
+        <Route path="/organisation" element={<Organisation />} />
       </Routes>
     </>
   );

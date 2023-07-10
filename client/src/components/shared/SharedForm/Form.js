@@ -30,8 +30,8 @@ const Form = ({ submitBtn, formTitle, formType }) => {
   };
 
   return (
-    <div className="flex  min-h-3/4  w-full  ">
-      <form className="  py-10 my-5 ">
+    <div className="flex min-h-3/4  w-full  ">
+      <form className=" py-10 my-5 ">
         <h3 className="text-4xl font-semibold mb-10  text-start ">
           {formTitle}
         </h3>
@@ -187,16 +187,16 @@ const Form = ({ submitBtn, formTitle, formType }) => {
               return null;
           }
         })()}
-        {error && <p className="text-red-500">{error}</p>}
+        {error && <p className="text-red-500 mb-2">{error}</p>}
 
         <button
           type="submit"
           className="bg-rose-400  hover:bg-rose-600  text-white font-bold py-3 px-4 rounded w-60 mb-4"
           onClick={(e) => {
             e.preventDefault();
-            if (formType === "login")
-              handleLogin(e, formData.email, formData.password, formData.role);
-            else if (formType === "register")
+            if (formType === "login") {
+              handleLogin(e, formData.role, formData.email, formData.password);
+            } else if (formType === "register")
               handleRegister(
                 e,
                 formData.name,
