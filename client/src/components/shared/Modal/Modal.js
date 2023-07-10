@@ -8,6 +8,7 @@ const Modal = () => {
   const [bloodGroup, setBloodGroup] = useState("");
   const [quantity, setQuantity] = useState(0);
   const [email, setEmail] = useState("");
+  const organisation = "64a6d593a347e395bc02bc7a";
   const { user } = useSelector((state) => state.auth);
   // handle modal data
   const handleModalSubmit = async () => {
@@ -17,10 +18,11 @@ const Modal = () => {
       }
       const { data } = await API.post("/inventory/create-inventory", {
         email,
-        organisation: user?._id,
+        donor: user?._id,
         inventoryType,
         bloodGroup,
         quantity,
+        organisation,
       });
       if (data?.success) {
         alert("New Record Created");

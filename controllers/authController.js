@@ -51,12 +51,11 @@ const loginController = async (req, res) => {
     }
 
     //check role
-    if(user.role !== req.body.role){
-        return res.status(500).send({
-            success: false,
-            message: 'Roles doesnt match'
-
-        })
+    if (user.role !== req.body.role) {
+      return res.status(500).send({
+        success: false,
+        message: "Roles doesnt match",
+      });
     }
 
     //compare password
@@ -83,7 +82,7 @@ const loginController = async (req, res) => {
       success: true,
       msg: "Login successfuly",
       token,
-      
+      user,
     });
   } catch (error) {
     console.log(error);
@@ -95,28 +94,23 @@ const loginController = async (req, res) => {
   }
 };
 
-//get current user 
+//get current user
 
-
-const currentUserController = async(req,res)=>{
-
-    try {
-        const user = await userModel.findOne({ _id: req.body.userId})
-        return res.status(200).send({
-            success: true,
-            message: 'User fetched successfully',
-            user
-        })
-        
-    } catch (error) {
-        console.log(error)
-        return res.staus(500).send({
-            success: false,
-            message: 'unable to get current user'
-        })
-        
-    }
-
-}
+const currentUserController = async (req, res) => {
+  try {
+    const user = await userModel.findOne({ _id: req.body.userId });
+    return res.status(200).send({
+      success: true,
+      message: "User fetched successfully",
+      user,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.staus(500).send({
+      success: false,
+      message: "unable to get current user",
+    });
+  }
+};
 
 export { registerController, loginController, currentUserController };

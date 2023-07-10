@@ -51,17 +51,19 @@ const createInventoryController = async (req, res) => {
 
 const getInventoryController = async (req, res) => {
   try {
-    const inventory = await inventoryModel.find({
-      organisation: req.body.organisation,
-    }).populate('donor').sort({createdAt: -1 });
-    console.log(inventory)
+    const inventory = await inventoryModel
+      .find({
+        organisation: req.body.organisation,
+      })
+      .populate("donor")
+      .sort({ createdAt: -1 });
+    console.log(inventory);
 
     return res.status(200).send({
-        success: true,
-        message: "get all records successfully",
-        inventory,
-
-    })
+      success: true,
+      message: "get all records successfully",
+      inventory,
+    });
   } catch (error) {
     console.log(error);
     return res.status(500).send({

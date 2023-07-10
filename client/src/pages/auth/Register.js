@@ -14,7 +14,7 @@ const Register = () => {
 
   return (
     <div className="bg-gradient-to-r from-gray-600 to-gray-700 text-white">
-      <div className="min-h-screen  w-10/12  mx-auto  ">
+      <div className="min-h-screen  w-10/12 lg:w-11/12  mx-auto  ">
         <div className="flex items-center justify-between">
           <div className="lg:w-1/2">
             <h1 className="text-3xl lg:text-5xl font-semibold inline-block my-8">

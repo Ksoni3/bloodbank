@@ -1,15 +1,13 @@
 import { userLogin, userRegister } from "../redux/features/auth/authActions";
 import store from "../redux/store";
 
-export const handleLogin = (e, email, password, role) => {
-  e.preventDefault();
+export const handleLogin = (e, role, email, password) => {
   try {
     if (!email || !password || !role) {
       return alert("All fields required");
     }
-    store.dispatch(userLogin({ email, password, role }));
-
     console.log("login", email, password, role);
+    store.dispatch(userLogin({ role, email, password }));
   } catch (err) {
     console.log(err);
   }
@@ -27,6 +25,7 @@ export const handleRegister = (
   phone
 ) => {
   e.preventDefault();
+  console.lo;
   try {
     store.dispatch(
       userRegister({
